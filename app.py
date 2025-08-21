@@ -167,30 +167,27 @@ def main():
             app_dir = Path(__file__).parent
             audio_file = app_dir / f"audio/{lesson['audio_file']}"
             
-            # Debug information
-            st.caption(f"🔍 Looking for: {lesson['audio_file']}")
-            st.caption(f"📁 Full path: {audio_file}")
-            st.caption(f"✅ File exists: {audio_file.exists()}")
-            
             try:
                 if audio_file.exists():
                     with open(audio_file, 'rb') as f:
                         audio_bytes = f.read()
-                    st.caption(f"📊 File size: {len(audio_bytes)} bytes")
-                    st.audio(audio_bytes, format='audio/mp3')
+                    
+                    # Mobile-friendly audio with user instruction
+                    st.info("📱 On mobile? Tap the play button below to hear the audio")
+                    st.audio(audio_bytes, format='audio/mp3', start_time=0)
                     st.caption("🇨🇳 Official test command")
+                    
+                    # Alternative download link for problematic mobile browsers
+                    st.download_button(
+                        label="📱 Download Audio (if player doesn't work)",
+                        data=audio_bytes,
+                        file_name=lesson['audio_file'],
+                        mime="audio/mp3"
+                    )
                 else:
                     st.error(f"❌ Audio file not found: {lesson['audio_file']}")
-                    # List available files for debugging
-                    audio_dir = app_dir / "audio"
-                    if audio_dir.exists():
-                        available_files = list(audio_dir.glob("*.mp3"))
-                        st.caption(f"Available audio files: {[f.name for f in available_files]}")
-                    else:
-                        st.error("Audio directory does not exist")
             except Exception as e:
                 st.error(f"Error loading audio: {str(e)}")
-                st.caption(f"Exception type: {type(e).__name__}")
             
             # Command type
             st.markdown("### Command Type")
@@ -232,7 +229,8 @@ def main():
                 if audio_file.exists():
                     with open(audio_file, 'rb') as f:
                         audio_bytes = f.read()
-                    st.audio(audio_bytes, format='audio/mp3')
+                    st.info("📱 Tap the play button to hear the command")
+                    st.audio(audio_bytes, format='audio/mp3', start_time=0)
                 else:
                     st.warning(f"Audio file not found: {lesson['audio_file']}")
             except Exception as e:
