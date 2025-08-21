@@ -166,13 +166,16 @@ def main():
             # Chinese audio
             app_dir = Path(__file__).parent
             audio_file = app_dir / f"audio/{lesson['audio_file']}"
-            if audio_file.exists():
-                with open(audio_file, 'rb') as f:
-                    audio_bytes = f.read()
-                st.audio(audio_bytes, format='audio/mp3')
-                st.caption("🇨🇳 Official test command")
-            else:
-                st.warning("Audio file not found")
+            try:
+                if audio_file.exists():
+                    with open(audio_file, 'rb') as f:
+                        audio_bytes = f.read()
+                    st.audio(audio_bytes, format='audio/mp3')
+                    st.caption("🇨🇳 Official test command")
+                else:
+                    st.warning(f"Audio file not found: {lesson['audio_file']}")
+            except Exception as e:
+                st.error(f"Error loading audio: {str(e)}")
             
             # Command type
             st.markdown("### Command Type")
@@ -210,10 +213,15 @@ def main():
             # Play audio
             app_dir = Path(__file__).parent
             audio_file = app_dir / f"audio/{lesson['audio_file']}"
-            if audio_file.exists():
-                with open(audio_file, 'rb') as f:
-                    audio_bytes = f.read()
-                st.audio(audio_bytes, format='audio/mp3')
+            try:
+                if audio_file.exists():
+                    with open(audio_file, 'rb') as f:
+                        audio_bytes = f.read()
+                    st.audio(audio_bytes, format='audio/mp3')
+                else:
+                    st.warning(f"Audio file not found: {lesson['audio_file']}")
+            except Exception as e:
+                st.error(f"Error loading audio: {str(e)}")
             
             # Answer options (simplified for demo)
             options = ["Low beam", "High beam", "Alternating beams", "Turn signals + beams", "Width + alarm lights", "Turn off all lights"]
