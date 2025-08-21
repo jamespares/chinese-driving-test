@@ -68,28 +68,24 @@ def main():
         if 'selected_index' not in st.session_state:
             st.session_state.selected_index = 0
             
-        # Navigation buttons
+        # Navigation buttons first
         col1, col2, col3 = st.columns([1, 2, 1])
         
         with col1:
             if st.session_state.selected_index > 0:
-                if st.button("← Previous", key=f"prev_btn_{st.session_state.selected_index}", use_container_width=True):
-                    st.session_state.selected_index -= 1
+                if st.button("← Previous", key="prev_btn", use_container_width=True):
+                    st.session_state.selected_index = max(0, st.session_state.selected_index - 1)
         
         with col2:
-            current_lesson = lessons[st.session_state.selected_index] if lessons else None
-            if current_lesson:
-                st.markdown(f"<div style='text-align: center; padding-top: 8px;'>Lesson {st.session_state.selected_index + 1} of {len(lessons)}</div>", unsafe_allow_html=True)
+            st.write("")  # Empty space for better layout
         
         with col3:
             if st.session_state.selected_index < len(lessons) - 1:
-                if st.button("Next →", key=f"next_btn_{st.session_state.selected_index}", use_container_width=True):
-                    st.session_state.selected_index += 1
-            
-        st.markdown("---")
+                if st.button("Next →", key="next_btn", use_container_width=True):
+                    st.session_state.selected_index = min(len(lessons) - 1, st.session_state.selected_index + 1)
         
-        # Optional lesson selector
-        lesson_options = [f"[{lesson['id']}] {lesson['chinese'][:30]}..." for lesson in lessons]
+        # Lesson selector (for jumping to specific lessons)
+        lesson_options = [f"Command {lesson['id']}: {lesson['chinese'][:30]}..." for lesson in lessons]
         selected_index = st.selectbox("Jump to Lesson:", range(len(lessons)), 
                                     format_func=lambda x: lesson_options[x],
                                     index=st.session_state.selected_index,
@@ -98,6 +94,8 @@ def main():
         # Update session state when selectbox changes
         if selected_index != st.session_state.selected_index:
             st.session_state.selected_index = selected_index
+            
+        st.markdown("---")
         
         # Use the session state index directly
         lesson = lessons[st.session_state.selected_index]
@@ -141,7 +139,26 @@ def main():
             
             # Required action
             st.markdown(f"### 💡 Required Light Action")
-            st.markdown(f"<div style='font-size: 18px; color: #d32f2f; font-weight: bold; background-color: #ffebee; padding: 12px; border-radius: 8px;'>{lesson['english']}</div>", unsafe_allow_html=True)
+            # Map each command to its correct light action
+            light_actions = {
+                1: "Turn on low beam headlights",
+                2: "Keep low beam (following vehicle)",
+                3: "Switch to low beam (meeting oncoming traffic)", 
+                4: "Use low beam (traffic light intersection)",
+                5: "Use low beam (well-lit road)",
+                6: "Alternate between low and high beam",
+                "6a": "Alternate between low and high beam",
+                "6b": "Alternate between low and high beam", 
+                "6c": "Alternate between low and high beam",
+                "6d": "Alternate between low and high beam",
+                7: "Left signal → alternate beams → right signal",
+                8: "Switch to high beam",
+                "8a": "Switch to high beam",
+                9: "Turn on width lights + hazard lights",
+                10: "Turn off all lights"
+            }
+            action_text = light_actions.get(lesson['id'], lesson['english'])
+            st.markdown(f"<div style='font-size: 18px; color: #d32f2f; font-weight: bold; background-color: #ffebee; padding: 12px; border-radius: 8px;'>{action_text}</div>", unsafe_allow_html=True)
             
         with col2:
             st.markdown("### Audio")
