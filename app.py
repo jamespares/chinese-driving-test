@@ -173,19 +173,19 @@ def main():
                         audio_bytes = f.read()
                     
                     # Mobile-friendly audio with user instruction
-                    st.info("📱 On mobile? Tap the play button below to hear the audio")
+                    st.info("On mobile? Tap the play button below to hear the audio")
                     st.audio(audio_bytes, format='audio/mp3', start_time=0)
-                    st.caption("🇨🇳 Official test command")
+                    st.caption("Official test command")
                     
                     # Alternative download link for problematic mobile browsers
                     st.download_button(
-                        label="📱 Download Audio (if player doesn't work)",
+                        label="Download Audio (if player doesn't work)",
                         data=audio_bytes,
                         file_name=lesson['audio_file'],
                         mime="audio/mp3"
                     )
                 else:
-                    st.error(f"❌ Audio file not found: {lesson['audio_file']}")
+                    st.error(f"Audio file not found: {lesson['audio_file']}")
             except Exception as e:
                 st.error(f"Error loading audio: {str(e)}")
             
@@ -229,7 +229,7 @@ def main():
                 if audio_file.exists():
                     with open(audio_file, 'rb') as f:
                         audio_bytes = f.read()
-                    st.info("📱 Tap the play button to hear the command")
+                    st.info("Tap the play button to hear the command")
                     st.audio(audio_bytes, format='audio/mp3', start_time=0)
                 else:
                     st.warning(f"Audio file not found: {lesson['audio_file']}")
