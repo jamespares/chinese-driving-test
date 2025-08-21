@@ -1,0 +1,535 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background: #f8f9fa;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #2c3e50;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+header p {
+    font-size: 1.1rem;
+    opacity: 0.7;
+}
+
+/* Progress bar */
+.progress-bar {
+    position: relative;
+    background: #e9ecef;
+    border-radius: 10px;
+    height: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    background: #6c757d;
+    height: 100%;
+    width: 2%;
+    border-radius: 10px;
+    transition: width 0.3s ease;
+}
+
+.progress-text {
+    position: absolute;
+    right: 10px;
+    top: -25px;
+    color: #6c757d;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Lesson selector */
+.lesson-selector {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.lesson-selector label {
+    color: #495057;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.lesson-dropdown {
+    padding: 8px 15px;
+    border: 2px solid #dee2e6;
+    border-radius: 8px;
+    background: white;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 500;
+    min-width: 140px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lesson-dropdown:hover {
+    border-color: #adb5bd;
+}
+
+.lesson-dropdown:focus {
+    outline: none;
+    border-color: #6c757d;
+    box-shadow: 0 0 0 2px rgba(108, 117, 125, 0.1);
+}
+
+/* Main learning area */
+.learning-area {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mode-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 700px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Lesson card */
+.lesson-card {
+    text-align: center;
+}
+
+.lesson-number {
+    color: #666;
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.chinese-text {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #d32f2f;
+    margin-bottom: 30px;
+    line-height: 1.2;
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Text sections */
+.text-section {
+    margin-bottom: 30px;
+}
+
+.text-row {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.text-row label {
+    font-weight: 600;
+    color: #555;
+    min-width: 80px;
+    margin-right: 15px;
+    font-size: 0.95rem;
+}
+
+.pinyin {
+    font-size: 1.3rem;
+    color: #1976d2;
+    font-weight: 500;
+}
+
+.literal {
+    font-size: 1.1rem;
+    color: #7b1fa2;
+    font-style: italic;
+}
+
+.english {
+    font-size: 1.2rem;
+    color: #388e3c;
+    font-weight: 500;
+}
+
+.french {
+    font-size: 1.2rem;
+    color: #6f42c1;
+    font-weight: 500;
+}
+
+/* Audio controls */
+.audio-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+/* Buttons */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: #495057;
+    color: white;
+}
+
+.btn-primary:hover {
+    background: #343a40;
+    transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background: #5a6268;
+    transform: translateY(-1px);
+}
+
+.btn-success {
+    background: #495057;
+    color: white;
+}
+
+.btn-success:hover {
+    background: #343a40;
+    transform: translateY(-1px);
+}
+
+.btn-accent {
+    background: #6f42c1;
+    color: white;
+}
+
+.btn-accent:hover {
+    background: #5a359a;
+    transform: translateY(-1px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #666;
+    border: 2px solid #ddd;
+}
+
+.btn-outline:hover {
+    background: #f5f5f5;
+    border-color: #bbb;
+}
+
+.btn-nav {
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-nav:hover {
+    background: #e0e0e0;
+}
+
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Mode controls */
+.mode-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navigation {
+    display: flex;
+    gap: 10px;
+}
+
+/* Practice mode styles */
+.practice-card {
+    text-align: center;
+}
+
+.practice-header {
+    margin-bottom: 30px;
+}
+
+.practice-header h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.practice-header p {
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.practice-audio {
+    margin-bottom: 25px;
+}
+
+.audio-status {
+    margin-top: 10px;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.practice-options {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin-bottom: 25px;
+}
+
+.option-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.option-group input[type="radio"] {
+    width: 18px;
+    height: 18px;
+    accent-color: #1976d2;
+}
+
+.option-group label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #333;
+    cursor: pointer;
+}
+
+.practice-input {
+    margin-bottom: 25px;
+}
+
+.practice-input textarea {
+    width: 100%;
+    padding: 15px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-family: inherit;
+    resize: vertical;
+    margin-bottom: 15px;
+    transition: border-color 0.2s ease;
+}
+
+.practice-input textarea:focus {
+    outline: none;
+    border-color: #1976d2;
+}
+
+.practice-input textarea.correct {
+    border-color: #4CAF50;
+    background-color: #f1f8e9;
+}
+
+.practice-input textarea.incorrect {
+    border-color: #f44336;
+    background-color: #ffebee;
+}
+
+/* Feedback area */
+.feedback-area {
+    margin-bottom: 25px;
+    min-height: 60px;
+    padding: 15px;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.feedback-correct {
+    background: #e8f5e8;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
+}
+
+.feedback-incorrect {
+    background: #ffebee;
+    color: #c62828;
+    border: 1px solid #ef9a9a;
+}
+
+.feedback-comparison {
+    margin-top: 10px;
+    font-size: 0.95rem;
+}
+
+.feedback-comparison .correct-answer {
+    color: #2e7d32;
+    font-weight: 600;
+}
+
+.feedback-comparison .user-answer {
+    color: #c62828;
+    font-weight: 600;
+}
+
+.practice-controls {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Footer */
+footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #dee2e6;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    color: #6c757d;
+}
+
+.stat-item {
+    text-align: center;
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    
+    .mode-container {
+        padding: 25px;
+    }
+    
+    .chinese-text {
+        font-size: 2.2rem;
+    }
+    
+    .text-row {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .text-row label {
+        min-width: auto;
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+    
+    .mode-controls {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .practice-options {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .stats {
+        gap: 20px;
+    }
+    
+    .lesson-selector {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .lesson-dropdown {
+        min-width: 200px;
+    }
+}
+
+/* Loading and transition effects */
+.fade-in {
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Audio visualization */
+.audio-playing {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+}

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chinese Learning</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+
+        <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+            <span class="progress-text" id="progressText">Lesson 1 of 55</span>
+        </div>
+
+        <div class="lesson-selector">
+            <label for="lessonSelect">Jump to Lesson:</label>
+            <select id="lessonSelect" class="lesson-dropdown">
+                <option value="0">Lesson 1</option>
+            </select>
+        </div>
+
+        <main class="learning-area">
+            <!-- Study Mode -->
+            <div class="mode-container" id="studyMode">
+                <div class="lesson-card">
+                    <div class="lesson-number" id="lessonNumber">Lesson 1</div>
+                    
+                    <div class="chinese-text" id="chineseText">我叫James，我是英国人。</div>
+                    
+                    <div class="text-section">
+                        <div class="text-row">
+                            <label>Pinyin:</label>
+                            <div class="pinyin" id="pinyinText">Wǒ jiào James, wǒ shì Yīngguó rén.</div>
+                        </div>
+                        
+                        <div class="text-row">
+                            <label>Literal:</label>
+                            <div class="literal" id="literalText">I called James, I am England person.</div>
+                        </div>
+                        
+                        <div class="text-row">
+                            <label>English:</label>
+                            <div class="english" id="englishText">My name is James, I am British.</div>
+                        </div>
+                        
+                        <div class="text-row" id="frenchRow" style="display: none;">
+                            <label>French:</label>
+                            <div class="french" id="frenchText">Je m'appelle James, je suis britannique.</div>
+                        </div>
+                    </div>
+
+                    <div class="audio-controls">
+                        <button class="btn btn-primary" id="playAudioBtn">Play Chinese</button>
+                        <button class="btn btn-secondary" id="repeatAudioBtn">Repeat Chinese</button>
+                        <button class="btn btn-accent" id="playFrenchBtn" style="display: none;">Play French</button>
+                    </div>
+                </div>
+
+                <div class="mode-controls">
+                    <button class="btn btn-success" id="startPracticeBtn">Type it out</button>
+                    <div class="navigation">
+                        <button class="btn btn-nav" id="prevLessonBtn">Previous</button>
+                        <button class="btn btn-nav" id="nextLessonBtn">Next</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Practice Mode -->
+            <div class="mode-container hidden" id="practiceMode">
+                <div class="practice-card">
+                    <div class="practice-header">
+                        <h2>Type it out</h2>
+                        <p>Listen to the audio and type what you hear:</p>
+                    </div>
+
+                    <div class="practice-audio">
+                        <button class="btn btn-primary" id="practicePlayBtn">Play Audio</button>
+                        <div class="audio-status" id="audioStatus">Click to play audio</div>
+                    </div>
+
+                    <div class="practice-options">
+                        <div class="option-group">
+                            <input type="radio" name="practiceType" id="practicePinyin" value="pinyin" checked>
+                            <label for="practicePinyin">Write Pinyin</label>
+                        </div>
+                        <div class="option-group">
+                            <input type="radio" name="practiceType" id="practiceChinese" value="chinese">
+                            <label for="practiceChinese">Write Chinese Characters</label>
+                        </div>
+                    </div>
+
+                    <div class="practice-input">
+                        <textarea 
+                            id="practiceAnswer" 
+                            placeholder="Type your answer here..."
+                            rows="3"
+                        ></textarea>
+                        <button class="btn btn-primary" id="checkAnswerBtn">Check Answer</button>
+                    </div>
+
+                    <div class="feedback-area" id="feedbackArea"></div>
+
+                    <div class="practice-controls">
+                        <button class="btn btn-secondary" id="showAnswerBtn">Show Answer</button>
+                        <button class="btn btn-success hidden" id="nextPracticeBtn">Next Lesson</button>
+                        <button class="btn btn-outline" id="backToStudyBtn">Back to Study</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-label">Completed:</span>
+                    <span class="stat-value" id="completedCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-label">Total:</span>
+                    <span class="stat-value" id="totalCount">55</span>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

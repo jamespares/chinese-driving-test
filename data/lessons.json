@@ -1,0 +1,157 @@
+{
+  "total_lessons": 15,
+  "audio_generated": 15,
+  "french_audio_generated": 0,
+  "total_characters": 123,
+  "lessons_with_french": 0,
+  "estimated_cost_usd": 0.0,
+  "lessons": [
+    {
+      "id": 1,
+      "chinese": "请开启前照灯",
+      "pinyin": "qǐng kāi qǐ qián zhào dēng",
+      "literal": "please turn on front shine light",
+      "english": "low beam",
+      "audio_file": "driving-1.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": 2,
+      "chinese": "同方向近距离跟车行驶",
+      "pinyin": "tóng fāng xiàng jìn jù lí gēn chē xíng shǐ",
+      "literal": "same direction close distance follow vehicle travel drive",
+      "english": "following a vehicle ahead at close range in the same direction",
+      "audio_file": "driving-2.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": 3,
+      "chinese": "与机动车会车",
+      "pinyin": "yǔ jī dòng chē huì chē",
+      "literal": "with motor vehicle meet vehicle",
+      "english": "meeting oncoming motor vehicles",
+      "audio_file": "driving-3.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": 4,
+      "chinese": "通过交通信号灯控制的路口",
+      "pinyin": "tōng guò jiāo tōng xìn hào dēng kòng zhì de lù kǒu",
+      "literal": "pass through traffic signal light control particle road intersection",
+      "english": "passing through traffic light controlled intersections",
+      "audio_file": "driving-4.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": 5,
+      "chinese": "在有路灯，照明良好的道路上行驶",
+      "pinyin": "zài yǒu lù dēng, zhào míng liáng hǎo de dào lù shàng xíng shǐ",
+      "literal": "at have road light, shine bright good particle road path on travel drive",
+      "english": "driving on well-lit roads with street lights",
+      "audio_file": "driving-5.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": 6,
+      "chinese": "通过急弯",
+      "pinyin": "tōng guò jí wān",
+      "literal": "pass through urgent bend",
+      "english": "alternating low beam and high beam",
+      "audio_file": "driving-6.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": "6a",
+      "chinese": "通过坡路",
+      "pinyin": "tōng guò pō lù",
+      "literal": "pass through slope road",
+      "english": "passing through slopes",
+      "audio_file": "driving-6a.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": "6b",
+      "chinese": "通过拱桥",
+      "pinyin": "tōng guò gǒng qiáo",
+      "literal": "pass through arch bridge",
+      "english": "crossing arched bridges",
+      "audio_file": "driving-6b.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": "6c",
+      "chinese": "通过人行横道",
+      "pinyin": "tōng guò rén xíng héng dào",
+      "literal": "pass through person walk cross road",
+      "english": "crossing pedestrian crosswalks",
+      "audio_file": "driving-6c.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": "6d",
+      "chinese": "通过没有交通信号灯控制的路口",
+      "pinyin": "tōng guò méi yǒu jiāo tōng xìn hào dēng kòng zhì de lù kǒu",
+      "literal": "pass through not have traffic signal light control particle road intersection",
+      "english": "passing through uncontrolled intersections",
+      "audio_file": "driving-6d.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": 7,
+      "chinese": "超越前方车辆",
+      "pinyin": "chāo yuè qián fāng chē liàng",
+      "literal": "exceed surpass front direction vehicle measure",
+      "english": "left indicator—alternating low beam and high beam—right indicator",
+      "audio_file": "driving-7.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": 8,
+      "chinese": "在无照明的道路行驶",
+      "pinyin": "zài wú zhào míng de dào lù xíng shǐ",
+      "literal": "at without shine bright particle road path travel drive",
+      "english": "high beam",
+      "audio_file": "driving-8.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": "8a",
+      "chinese": "在照明不良的道路行驶",
+      "pinyin": "zài zhào míng bù liáng de dào lù xíng shǐ",
+      "literal": "at shine bright not good particle road path travel drive",
+      "english": "driving on poorly lit roads",
+      "audio_file": "driving-8a.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": 9,
+      "chinese": "路边临时停车",
+      "pinyin": "lù biān lín shí tíng chē",
+      "literal": "road side temporary time stop vehicle",
+      "english": "width light + alarm light",
+      "audio_file": "driving-9.mp3",
+      "source": "chinese-driving"
+    },
+    {
+      "id": 10,
+      "chinese": "请关闭所有灯光，并起步",
+      "pinyin": "qǐng guān bì suǒ yǒu dēng guāng, bìng qǐ bù",
+      "literal": "please close shut all have light bright, and start step",
+      "english": "turn off all lights",
+      "audio_file": "driving-10.mp3",
+      "source": "chinese-driving"
+    }
+  ],
+  "metadata": {
+    "source_file": "input/chinese-driving.md",
+    "audio_directory": "audio",
+    "tts_provider": "edge",
+    "voice_settings": {
+      "chinese_voice": "zh-CN-YunyangNeural",
+      "french_voice": "fr-FR-HenriNeural",
+      "chinese_rate": "-20%",
+      "french_rate": "-10%",
+      "pitch": "+0Hz"
+    }
+  }
+}
